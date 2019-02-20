@@ -1,0 +1,25 @@
+{
+  "name": "randomnumbers",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "author": "Juan Manuel",
+  "scripts": {
+    "client": "cd randomnumbers-app && yarn start",
+    "server": "nodemon --exec babel-node server.js",
+    "start": "cross-env NODE_ENV=development concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
+    "pre:build": "rm -rf server-bundle.js && cd randomnumbers-app && rm -rf build/",
+    "build": "yarn pre:build && babel server.js -o server-bundle.js && cd randomnumbers-app && yarn build",
+    "serve": "cross-env NODE_ENV=production node server-bundle.js"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "concurrently": "^4.1.0",
+    "cross-env": "^5.2.0",
+    "nodemon": "^1.18.10"
+  },
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}

@@ -1,0 +1,10 @@
+# folders
+node_modules/
+randomnumbers-app/
+
+# development-files
+server.js
+.babelrc
+
+# misc
+yarn.lock
