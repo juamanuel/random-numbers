@@ -1,10 +1,10 @@
 # folders
 node_modules/
-randomnumbers-app/
 
 # development-files
-server.js
+server-bundle.js
 .babelrc
 
 # misc
 yarn.lock
+
